@@ -34,6 +34,11 @@ docker run -ti --name evilginx2 -v ${HOME}:/home/evilginx2 -p 443:443 -p 80:80 -
 ```
 
 
+## CONFIGURATION
+
+Tutoriel video https://www.youtube.com/watch?v=SxTs9pVYBMw
+
+
 ## LICENSE
 
 [![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://github.com/oda-alexandre/evilginx2/blob/master/LICENSE)
