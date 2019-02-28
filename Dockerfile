@@ -1,34 +1,40 @@
-FROM golang:1.10.3-alpine AS build
+FROM golang:rc-stretch
 
-RUN apk add --update \
-    git \
-  && rm -rf /var/cache/apk/*
+MAINTAINER https://oda-alexandre.github.io
 
-RUN wget -O /usr/local/bin/dep https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64 && chmod +x /usr/local/bin/dep
+# INSTALLATION DES PREREQUIS
+RUN apt-get update && apt-get install --no-install-recommends -y \
+sudo \
+ca-certificates \
+make \
+git
 
+# AJOUT UTILISATEUR
+RUN useradd -d /home/evilginx2 -m evilginx2 && \
+passwd -d evilginx2 && \
+adduser evilginx2 sudo
+
+# SELECTION UTILISATEUR
+USER evilginx2
+
+# INSTALLATION DE L'APPLICATION
+RUN go get -u github.com/kgretzky/evilginx2
+
+# SELECTION DE L'ESPACE DE TRAVAIL
 WORKDIR /go/src/github.com/kgretzky/evilginx2
 
-COPY Gopkg.toml Gopkg.lock ./
+# INSTALLATION DE L'APPLICATION
+RUN make && \
+sudo make install
 
-RUN dep ensure -vendor-only
+# NETTOYAGE
+RUN sudo apt-get --purge autoremove -y \
+git \
+make && \
+sudo apt-get autoclean -y && \
+sudo rm /etc/apt/sources.list && \
+sudo rm -rf /var/cache/apt/archives/* && \
+sudo rm -rf /var/lib/apt/lists/*
 
-COPY . /go/src/github.com/kgretzky/evilginx2
-
-RUN go build -o ./bin/evilginx main.go
-
-FROM alpine:3.8
-
-RUN apk add --update \
-    ca-certificates \
-  && rm -rf /var/cache/apk/*
-
-WORKDIR /app
-
-COPY --from=build /go/src/github.com/kgretzky/evilginx2/bin/evilginx /app/evilginx
-COPY ./phishlets/*.yaml /app/phishlets/
-
-VOLUME ["/app/phishlets/"]
-
-EXPOSE 443 80 53/udp
-
-ENTRYPOINT ["/app/evilginx"]
+# COMMANDE AU DEMARRAGE DU CONTENEUR
+CMD sudo evilginx
