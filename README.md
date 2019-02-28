@@ -33,14 +33,6 @@ Installer [docker](https://www.docker.com)
 docker run -ti --name evilginx2 -v ${HOME}:/home/evilginx2 -p 443:443 -p 80:80 -p 53:53/udp alexandreoda/evilginx2
 ```
 
-## CONFIGURATION
-
-Obtenez un nom de domain gratuit sur https://www.freenom.com/fr/index.html?lang=fr
-
-```
-docker exec -ti ufonet /bin/bash
-./ufonet --check-tor --proxy="http://127.0.0.1:8118"
-```
 
 ## LICENSE
 
