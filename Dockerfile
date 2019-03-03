@@ -1,21 +1,25 @@
 FROM golang:rc-stretch
 
-MAINTAINER https://oda-alexandre.github.io
+MAINTAINER https://oda-alexandre.com
+
+# VARIABLES
+ENV USER evilginx2
+ENV DEBIAN_FRONTEND noninteractive
 
 # INSTALLATION DES PREREQUIS
 RUN apt-get update && apt-get install --no-install-recommends -y \
 sudo \
 ca-certificates \
 make \
-git
+git && \
 
 # AJOUT UTILISATEUR
-RUN useradd -d /home/evilginx2 -m evilginx2 && \
-passwd -d evilginx2 && \
-adduser evilginx2 sudo
+useradd -d /home/${USER} -m ${USER} && \
+passwd -d ${USER} && \
+adduser ${USER} sudo
 
 # SELECTION UTILISATEUR
-USER evilginx2
+USER ${USER}
 
 # INSTALLATION DE L'APPLICATION
 RUN go get -u github.com/kgretzky/evilginx2
@@ -25,10 +29,10 @@ WORKDIR /go/src/github.com/kgretzky/evilginx2
 
 # INSTALLATION DE L'APPLICATION
 RUN make && \
-sudo make install
+sudo make install && \
 
 # NETTOYAGE
-RUN sudo apt-get --purge autoremove -y \
+sudo apt-get --purge autoremove -y \
 git \
 make && \
 sudo apt-get autoclean -y && \

@@ -1,25 +1,32 @@
 # evilginx2
 
-![evilginx2](https://raw.githubusercontent.com/oda-alexandre/evilginx2/master/img/logo-evilginx2.png) ![docker](https://raw.githubusercontent.com/oda-alexandre/evilginx2/master/img/logo-docker.png)
+[![dockeri.co](https://dockeri.co/image/alexandreoda/evilginx2)](https://hub.docker.com/r/alexandreoda/evilginx2)
 
 
 ## INDEX
 
-- [Build Docker](#BUILD)
+- [Badges](#BADGES)
 - [Introduction](#INTRODUCTION)
 - [Prerequis](#PREREQUIS)
 - [Installation](#INSTALLATION)
 - [License](#LICENSE)
 
 
-## BUILD DOCKER
+## BADGES
 
-[![evilginx2 docker build](https://img.shields.io/docker/build/alexandreoda/evilginx2.svg)](https://hub.docker.com/r/alexandreoda/evilginx2)
+[![version](https://images.microbadger.com/badges/version/alexandreoda/evilginx2.svg)](https://microbadger.com/images/alexandreoda/evilginx2)
+[![size](https://images.microbadger.com/badges/image/alexandreoda/evilginx2.svg)](https://microbadger.com/images/alexandreoda/evilginx2")
+[![build](https://img.shields.io/docker/build/alexandreoda/evilginx2.svg)](https://hub.docker.com/r/alexandreoda/evilginx2)
+[![automated](https://img.shields.io/docker/automated/alexandreoda/evilginx2.svg)](https://hub.docker.com/r/alexandreoda/evilginx2)
 
 
 ## INTRODUCTION
 
-Ce repository contient le fichier Dockerfile de [evilginx2](https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens) pour [docker](https://www.docker.com), mis à jour automatiquement dans le [docker hub](https://hub.docker.com/r/alexandreoda/evilginx2/) public.
+Ce repository contient le fichier Dockerfile de
+
+- [evilginx2](https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens)
+
+Mis à jour automatiquement dans le [docker hub public](https://hub.docker.com/r/alexandreoda/evilginx2/).
 
 
 ## PREREQUIS
