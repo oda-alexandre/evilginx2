@@ -3,8 +3,8 @@ FROM golang:rc-stretch
 MAINTAINER https://oda-alexandre.com
 
 # VARIABLES
-ENV USER evilginx2
-ENV DEBIAN_FRONTEND noninteractive
+ENV USER evilginx2 \
+DEBIAN_FRONTEND noninteractive
 
 # INSTALLATION DES PREREQUIS
 RUN apt-get update && apt-get install --no-install-recommends -y \
