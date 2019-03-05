@@ -5,6 +5,7 @@ MAINTAINER https://oda-alexandre.com
 # VARIABLES
 ENV USER evilginx2
 ENV DEBIAN_FRONTEND noninteractive
+ENV PORTS ENV PORTS 443 80 53/udp
 
 # INSTALLATION DES PREREQUIS
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -39,6 +40,8 @@ sudo apt-get autoclean -y && \
 sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
 sudo rm -rf /var/lib/apt/lists/*
+
+EXPOSE ${PORTS}
 
 # COMMANDE AU DEMARRAGE DU CONTENEUR
 CMD sudo evilginx
