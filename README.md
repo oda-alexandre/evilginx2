@@ -1,6 +1,6 @@
 # evilginx2
 
-[![dockeri.co](https://dockeri.co/image/alexandreoda/evilginx2)](https://hub.docker.com/r/alexandreoda/evilginx2)
+<img src="https://raw.githubusercontent.com/kgretzky/evilginx2/master/media/img/evilginx2-logo-512.png" height="160" />
 
 
 ## INDEX
@@ -14,10 +14,7 @@
 
 ## BADGES
 
-[![version](https://images.microbadger.com/badges/version/alexandreoda/evilginx2.svg)](https://microbadger.com/images/alexandreoda/evilginx2)
-[![size](https://images.microbadger.com/badges/image/alexandreoda/evilginx2.svg)](https://microbadger.com/images/alexandreoda/evilginx2")
-[![build](https://img.shields.io/docker/build/alexandreoda/evilginx2.svg)](https://hub.docker.com/r/alexandreoda/evilginx2)
-[![automated](https://img.shields.io/docker/automated/alexandreoda/evilginx2.svg)](https://hub.docker.com/r/alexandreoda/evilginx2)
+[![pipeline status](https://gitlab.com/oda-alexandre/evilginx2/badges/master/pipeline.svg)](https://gitlab.com/oda-alexandre/evilginx2/commits/master)
 
 
 ## INTRODUCTION
