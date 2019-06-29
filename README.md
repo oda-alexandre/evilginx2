@@ -7,8 +7,8 @@
 
 - [Badges](#BADGES)
 - [Introduction](#INTRODUCTION)
-- [Prerequis](#PREREQUIS)
-- [Installation](#INSTALLATION)
+- [PREREQUISITESites](#PREREQUISITESITES)
+- [Install](#INSTALL)
 - [License](#LICENSE)
 
 
@@ -19,30 +19,36 @@
 
 ## INTRODUCTION
 
-Ce repository contient le fichier Dockerfile de
+Docker image of :
 
 - [evilginx2](https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens)
 
-Mis à jour automatiquement dans le [docker hub public](https://hub.docker.com/r/alexandreoda/evilginx2/).
+Continuous integration on :
+
+- [gitlab](https://gitlab.com/oda-alexandre/evilginx2/pipelines)
+
+automatically updated on :
+
+- [docker hub public](https://hub.docker.com/r/alexandreoda/evilginx2/)
 
 
-## PREREQUIS
+## PREREQUISITES
 
-Installer [docker](https://www.docker.com)
+Use [docker](https://www.docker.com)
 
 
-## INSTALLATION
+## INSTALL
 
 ```
 docker run -ti --name evilginx2 -v ${HOME}:/home/evilginx2 -p 443:443 -p 80:80 -p 53:53/udp alexandreoda/evilginx2
 ```
 
 
-## CONFIGURATION
+## CONFIG
 
 Tutoriel video https://www.youtube.com/watch?v=SxTs9pVYBMw
 
 
 ## LICENSE
 
-[![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://github.com/oda-alexandre/evilginx2/blob/master/LICENSE)
+[![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://gitlab.com/oda-alexandre/evilginx2/blob/master/LICENSE)

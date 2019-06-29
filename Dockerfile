@@ -1,5 +1,7 @@
+# IMAGE TO USE
 FROM golang:rc-stretch
 
+# MAINTAINER
 MAINTAINER https://www.oda-alexandre.com/
 
 # VARIABLES
@@ -7,32 +9,32 @@ ENV USER evilginx2
 ENV DEBIAN_FRONTEND noninteractive
 ENV PORTS ENV PORTS 443 80 53/udp
 
-# INSTALLATION DES PREREQUIS
+# INSTALL PACKAGES
 RUN apt-get update && apt-get install --no-install-recommends -y \
 sudo \
 ca-certificates \
 make \
 git && \
 
-# AJOUT UTILISATEUR
+# ADD USER
 useradd -d /home/${USER} -m ${USER} && \
 passwd -d ${USER} && \
 adduser ${USER} sudo
 
-# SELECTION UTILISATEUR
+# SELECT USER
 USER ${USER}
 
-# INSTALLATION DE L'APPLICATION
+# INSTALL APP
 RUN go get -u github.com/kgretzky/evilginx2
 
-# SELECTION DE L'ESPACE DE TRAVAIL
+# SELECT WORKING SPACE
 WORKDIR /go/src/github.com/kgretzky/evilginx2
 
-# INSTALLATION DE L'APPLICATION
+# INSTALL APP
 RUN make && \
 sudo make install && \
 
-# NETTOYAGE
+# CLEANING
 sudo apt-get --purge autoremove -y \
 git \
 make && \
@@ -41,8 +43,8 @@ sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
 sudo rm -rf /var/lib/apt/lists/*
 
-# OUVERTURE DE PORTS
+# OPENING PORTS
 EXPOSE ${PORTS}
 
-# COMMANDE AU DEMARRAGE DU CONTENEUR
+# START THE CONTAINER
 CMD sudo evilginx
