@@ -47,4 +47,4 @@ sudo rm -rf /var/lib/apt/lists/*
 EXPOSE ${PORTS}
 
 # START THE CONTAINER
-CMD sudo evilginx
+CMD sudo evilginx \
