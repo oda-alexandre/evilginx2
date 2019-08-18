@@ -1,6 +1,6 @@
 FROM golang:rc-stretch
 
-MAINTAINER https://www.oda-alexandre.com/
+LABEL authors="https://www.oda-alexandre.com/"
 
 ENV USER evilginx2
 ENV DEBIAN_FRONTEND noninteractive
