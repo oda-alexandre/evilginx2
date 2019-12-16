@@ -3,17 +3,23 @@ FROM golang:rc-stretch
 LABEL authors https://www.oda-alexandre.com/
 
 ENV USER evilginx2
+ENV HOME /home/${USER}
+ENV LOCALES fr_FR.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m'; \
   apt-get update && apt-get install --no-install-recommends -y \
   sudo \
+  locales \
   ca-certificates \
   make \
   git
 
+RUN echo -e '\033[36;1m ******* CHANGE LOCALES ******** \033[0m'; \
+  locale-gen ${LOCALES}
+  
 RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m'; \
-  useradd -d /home/${USER} -m ${USER}; \
+  useradd -d ${HOME} -m ${USER}; \
   passwd -d ${USER}; \
   adduser ${USER} sudo
 
