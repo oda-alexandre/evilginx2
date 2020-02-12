@@ -1,6 +1,6 @@
 # evilginx2
 
-<img src="https://raw.githubusercontent.com/kgretzky/evilginx2/master/media/img/evilginx2-logo-512.png" width="200" height="200"/>
+<img src="https://assets.gitlab-static.net/uploads/-/system/project/avatar/12904444/evilginx2-logo-512.png" width="200" height="200"/>
 
 
 ## INDEX
