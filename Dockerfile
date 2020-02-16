@@ -1,6 +1,6 @@
 FROM golang:rc-stretch
 
-LABEL authors https://www.oda-alexandre.com/
+LABEL authors https://www.oda-alexandre.com
 
 ENV USER evilginx2
 ENV HOME /home/${USER}
