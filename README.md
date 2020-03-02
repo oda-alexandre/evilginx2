@@ -8,6 +8,7 @@
 - [evilginx2](#evilginx2)
   - [INDEX](#index)
   - [BADGES](#badges)
+  - [FIRST UPDATE](#first-update)
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
   - [INSTALL](#install)
@@ -18,6 +19,11 @@
 ## BADGES
 
 [![pipeline status](https://gitlab.com/oda-alexandre/evilginx2/badges/master/pipeline.svg)](https://gitlab.com/oda-alexandre/evilginx2/commits/master)
+
+
+## FIRST UPDATE
+
+Date: 01-01-01
 
 
 ## INTRODUCTION
