@@ -41,7 +41,10 @@ Use [docker](https://www.docker.com)
 ### DOCKER RUN
 
 ```\
-docker  run -ti --rm --name evilginx2 -v ${HOME}:/home/evilginx2 alexandreoda/evilginx2
+docker run -ti --rm \
+--name evilginx2 \
+-v ${HOME}:/home/evilginx2 \
+alexandreoda/evilginx2
 ```
 
 ### DOCKER COMPOSE
