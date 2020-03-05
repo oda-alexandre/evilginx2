@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  evilginx2:
+    container_name: evilginx2
+    image: alexandreoda/evilginx2
+    privileged: false
+    volumes:
+      - "${HOME}:/home/evilginx2"

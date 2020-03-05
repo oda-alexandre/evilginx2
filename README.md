@@ -10,7 +10,8 @@
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
   - [INSTALL](#install)
-  - [CONFIG](#config)
+    - [DOCKER RUN](#docker-run)
+    - [DOCKER COMPOSE](#docker-compose)
   - [LICENSE](#license)
 
 ## BADGES
@@ -25,7 +26,7 @@ Docker image of :
 
 Continuous integration on :
 
-- [gitlab](https://gitlab.com/oda-alexandre/evilginx2/pipelines)
+- [gitlab pipelines](https://gitlab.com/oda-alexandre/evilginx2/pipelines)
 
 Automatically updated on :
 
@@ -37,11 +38,24 @@ Use [docker](https://www.docker.com)
 
 ## INSTALL
 
-```docker run -ti --rm --name evilginx2 -v ${HOME}:/home/evilginx2 -p 443:443 -p 80:80 -p 53:53/udp alexandreoda/evilginx2```
+### DOCKER RUN
 
-## CONFIG
+```docker run -ti --rm --name evilginx2 -v ${HOME}:/home/evilginx2 alexandreoda/evilginx2
+```
 
-Tutoriel video <https://www.youtube.com/watch?v=SxTs9pVYBMw>
+### DOCKER COMPOSE
+
+```yml
+version: "3.7"
+
+services:
+  evilginx2:
+    container_name: evilginx2
+    image: alexandreoda/evilginx2
+    privileged: false
+    volumes:
+      - "${HOME}:/home/evilginx2"
+```
 
 ## LICENSE
 
